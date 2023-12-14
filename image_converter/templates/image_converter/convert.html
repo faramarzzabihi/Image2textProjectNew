@@ -1,0 +1,29 @@
+<!-- image_converter/templates/image_converter/convert.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image to Text Conversion</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <h2>Image to Text Conversion</h2>
+    <form method="post" enctype="multipart/form-data" action="{% url 'convert_image_to_text' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Convert</button>
+    </form>
+
+    {% if converted_image %}
+        <h3>Converted Text:</h3>
+        <p>{{ converted_image }}</p>
+        <p>Font Size: {{ font_size }}px</p>
+        <p>Language: {{ language }}</p>
+        <p>Post Processing: {{ post_processing }}</p>
+    {% endif %}
+
+
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!-- image_to_text/templates/image_to_text/compare_texts.html -->
+
+<h2>Text Comparison</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <label for="text1">Text 1:</label>
+    <textarea name="text1" rows="4" cols="50"></textarea>
+    <br>
+    <label for="text2">Text 2:</label>
+    <textarea name="text2" rows="4" cols="50"></textarea>
+    <br>
+    <input type="submit" value="Compare">
+</form>
+{% if comparison_result %}
+    <p>Comparison Result: {{ comparison_result }}</p>
+{% endif %}
+
