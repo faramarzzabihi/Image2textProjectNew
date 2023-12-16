@@ -4,12 +4,12 @@ import os
 class SimilarityChecker:
     def __init__(self):
                 # Load the Farsi transformer model
-        #model = SentenceTransformer(model_name)
+      #  self.model = SentenceTransformer("m3hrdadfi/bert-zwnj-wnli-mean-tokens")
         current_directory = os.path.dirname(os.path.abspath(__file__))
         file_path = os.path.join(current_directory, "SentenceTransformerModel.pkl")
         import pickle
         with open(file_path, "rb") as file:
-            #pickle.dump(model, file)
+           # pickle.dump(self.model, file)
             self.model = pickle.load(file)
 
         

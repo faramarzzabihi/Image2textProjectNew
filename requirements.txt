@@ -1,0 +1,14 @@
+
+Django
+hazm
+pandas
+Pillow
+PyMuPDF==1.21.1
+PyMuPDFb==1.23.7
+scikit-image
+scikit-learn
+pytesseract
+tesseract
+torch
+transformers
+sentence_transformers
