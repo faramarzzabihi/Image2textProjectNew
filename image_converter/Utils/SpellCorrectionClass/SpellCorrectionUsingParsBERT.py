@@ -147,9 +147,9 @@ class SpellCorrectionUsingParsBERT_CLS:
 
         self.bert_predictor = MaskedSentencePredictor()
 
-        predictions = self.bert_predictor.predict_masked_sent("من در این معامله خیلی [MASK] کردم", top_k=5)
-        print(predictions)
-        print(self.find_homophone_pair('خوار', self.homophones))
+       # predictions = self.bert_predictor.predict_masked_sent("من در این معامله خیلی [MASK] کردم", top_k=5)
+       # print(predictions)
+      #  print(self.find_homophone_pair('خوار', self.homophones))
 
     def correct_spelling_fun(self,text_row):
         correct_text=self.correct_spelling(text_row,self.normalizer,self.tokenizer,self.spl,self.bert_predictor,self.homophones_list,self.homophones)
