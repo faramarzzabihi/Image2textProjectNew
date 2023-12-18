@@ -136,15 +136,20 @@ class SpellCorrectionUsingParsBERT_CLS:
         self.normalizer = hazm.Normalizer()
         self.tokenizer = hazm.WordTokenizer()
 
-        DATA_FILE_PATH = "Persian-WikiText-1.txt"
-        wikipedia = self.OpenFile(DATA_FILE_PATH)
-        wikipedia_words = self.clean_text(wikipedia,self.normalizer,self.tokenizer)
+      #  DATA_FILE_PATH = "Persian-WikiText-1.txt"
+      #  wikipedia = self.OpenFile(DATA_FILE_PATH)
+      #  wikipedia_words = self.clean_text(wikipedia,self.normalizer,self.tokenizer)
 
-        self.spl = NorvigSpellChecker(wikipedia_words)
+        #self.spl = NorvigSpellChecker(wikipedia_words)
         #import pickle
         #with open("spl_object.pkl", "wb") as file:
             #pickle.dump(spl, file)
-
+        current_directory = os.path.dirname(os.path.abspath(__file__))
+        file_path = os.path.join(current_directory, "spl.pkl")
+        import pickle
+        with open(file_path, "rb") as file:
+            #pickle.dump(self.spl, file)
+            self.spl= pickle.load(file)
         self.bert_predictor = MaskedSentencePredictor()
 
        # predictions = self.bert_predictor.predict_masked_sent("من در این معامله خیلی [MASK] کردم", top_k=5)
