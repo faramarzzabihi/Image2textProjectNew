@@ -76,7 +76,7 @@
         
               // Function to toggle the visibility of the font size label and input
               function toggleFontSizeVisibility() {
-                if (modelSelect.value === "teseract") {
+                if (modelSelect.value === "PadellOCR") {
                   fontSizeLabel.style.display = "block";
                   fontSizeInput.style.display = "block";
                 } else {
@@ -90,7 +90,7 @@
 <body>
 
 <h2>Image to Text Conversion</h2>
-<form method="post" enctype="multipart/form-data" action="{% url 'ccc' %}">
+<form method="post" enctype="multipart/form-data" action="{% url 'ConvertImage2Text' %}">
     {% csrf_token %}
     <label for="id_image">Choose an Image:</label>
     {{ form.image }}
