@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,11 +61,36 @@
             margin-bottom: 5px;
         }
     </style>
+    <script>
+            document.addEventListener("DOMContentLoaded", function () {
+              // Get references to the model and font size elements
+              var modelSelect = document.getElementById("id_model");
+              var fontSizeLabel = document.querySelector('label[for="id_font_size"]');
+              var fontSizeInput = document.getElementById("id_font_size");
+        
+              // Initial check for the current value of the model select
+              toggleFontSizeVisibility();
+        
+              // Add an event listener to the model select to check for changes
+              modelSelect.addEventListener("change", toggleFontSizeVisibility);
+        
+              // Function to toggle the visibility of the font size label and input
+              function toggleFontSizeVisibility() {
+                if (modelSelect.value === "teseract") {
+                  fontSizeLabel.style.display = "block";
+                  fontSizeInput.style.display = "block";
+                } else {
+                  fontSizeLabel.style.display = "none";
+                  fontSizeInput.style.display = "none";
+                }
+              }
+            });
+          </script>
 </head>
 <body>
 
 <h2>Image to Text Conversion</h2>
-<form method="post" enctype="multipart/form-data" action="{% url 'ConvertImage2Text' %}">
+<form method="post" enctype="multipart/form-data" action="{% url 'ccc' %}">
     {% csrf_token %}
     <label for="id_image">Choose an Image:</label>
     {{ form.image }}
@@ -75,7 +101,7 @@
     <label for="id_language">Language:</label>
     {{ form.language }}
     <br>
-    <label for="id_language">Language:</label>
+    <label for="id_model">Moled:</label>
     {{ form.model }}
     <br>
     <label for="id_post_processing">Post Processing:</label>
