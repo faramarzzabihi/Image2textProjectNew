@@ -3,8 +3,14 @@ FROM python:3.8
 
 WORKDIR /FaraApp
 
+ENV PYHTONUNBUFFERED=1
+RUN apt-get update \
+  && apt-get -y install tesseract-ocr
 #RUN pip freeze > requirements.txt
-RUN sudo apt-get install tesseract-ocr
+#apt-get update && apt-get install -y \
+#RUN apt-get update \
+ #&& apt-get install -y sudo
+#RUN sudo apt-get install-y tesseract-ocr
 COPY requirements.txt requirements.txt
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt

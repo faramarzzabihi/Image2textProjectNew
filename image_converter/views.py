@@ -6,8 +6,9 @@ from PIL import Image
 from .forms import ImageToTextForm
 from .Utils.SpellCorrecting import RunSpellCorrection
 from .Utils.SimilarityCheck import SimilarityChecker
+from .Utils.PadellOCR import PaddleOCRT2I
 #import OcrSourceCode
-def convert_image_to_text(request):
+def ConvertImage2Text(request):
     text = None
     font_size = 12
     language = 'fas'
@@ -20,9 +21,12 @@ def convert_image_to_text(request):
             font_size = form.cleaned_data['font_size']
             language = form.cleaned_data['language']
             post_processing = form.cleaned_data['post_processing']
-
+            model = form.cleaned_data['model']
             img = Image.open(image)
-            text = pytesseract.image_to_string(img, lang=language)
+            if model=="Tesseract" :
+                text = pytesseract.image_to_string(img, lang=language)
+            else:
+                text=PaddleOCRT2I(img,font_size)
             #RunSpellCorrection.SaveFile('ConvertedText.txt',text)
             if post_processing=='Yes':
                 first_half  = text[:len(text)//2]
@@ -35,7 +39,7 @@ def convert_image_to_text(request):
 
     return render(request, 'image_converter/convert.html', {'form': form, 'converted_image': text, 'font_size': font_size, 'language': language, 'post_processing': post_processing})
 
-def compare_texts(request):
+def CompareTexts(request):
 
     if request.method == 'POST':
         text1 = request.POST.get('text1', '')
