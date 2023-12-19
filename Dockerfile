@@ -4,8 +4,8 @@ FROM python:3.8
 WORKDIR /FaraApp
 
 ENV PYHTONUNBUFFERED=1
-RUN apt-get update \
-  && apt-get -y install tesseract-ocr
+#RUN apt-get update \
+#  && apt-get -y install tesseract-ocr
 #RUN pip freeze > requirements.txt
 #apt-get update && apt-get install -y \
 #RUN apt-get update \
@@ -14,6 +14,8 @@ RUN apt-get update \
 COPY requirements.txt requirements.txt
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
+RUN pip uninstall Numpy
+RUN pip install "Numpy==1.23.5"
 
 
 
