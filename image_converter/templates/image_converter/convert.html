@@ -104,7 +104,7 @@
     <label for="id_model">Moled:</label>
     {{ form.model }}
     <br>
-    <label for="id_post_processing">Post Processing:</label>
+    <label for="id_post_processing">Do SpellCorrection?:</label>
     {{ form.post_processing }}
     <br>
     <button type="submit">Convert</button>
@@ -113,6 +113,7 @@
 {% if converted_image %}
     <h3>Converted Text:</h3>
     <p>{{ converted_image }}</p>
+    <p>------------------------------------------</p>
     <p>Font Size: {{ font_size }}px</p>
     <p>Language: {{ language }}</p>
     <p>Model: {{ model }}</p>

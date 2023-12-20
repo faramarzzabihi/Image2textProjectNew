@@ -2,9 +2,10 @@ from paddleocr import PaddleOCR
 import numpy as np
 from PIL import Image
 
-def PaddleOCRT2I(img,LineSize):
-    
-  ocr = PaddleOCR(lang='fa')
+def PaddleOCRT2I(img,LineSize,lng):
+  if lng=='fas':lng='fa'
+  if lng=='eng':lng='en'
+  ocr = PaddleOCR(lang=lng)
   result = ocr.ocr(np.array(img))
 
   yLineSize=LineSize

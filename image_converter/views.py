@@ -13,6 +13,7 @@ def ConvertImage2Text(request):
     font_size = 12
     language = 'fas'
     post_processing = 'no'
+    model = 'Tesseract'
 
     if request.method == 'POST':
         form = ImageToTextForm(request.POST, request.FILES)
@@ -26,7 +27,7 @@ def ConvertImage2Text(request):
             if model=="Tesseract" :
                 text = pytesseract.image_to_string(img, lang=language)
             else:
-                text=PaddleOCRT2I(img,font_size)
+                text=PaddleOCRT2I(img,font_size,language)
             #RunSpellCorrection.SaveFile('ConvertedText.txt',text)
             if post_processing=='Yes':
                 first_half  = text[:len(text)//2]
@@ -37,7 +38,7 @@ def ConvertImage2Text(request):
     else:
         form = ImageToTextForm()
 
-    return render(request, 'image_converter/convert.html', {'form': form, 'converted_image': text, 'font_size': font_size, 'language': language, 'post_processing': post_processing})
+    return render(request, 'image_converter/convert.html', {'form': form, 'converted_image': text, 'font_size': font_size, 'language': language,'model':model, 'post_processing': post_processing})
 
 def CompareTexts(request):
 
