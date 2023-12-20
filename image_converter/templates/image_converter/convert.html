@@ -67,12 +67,15 @@
               var modelSelect = document.getElementById("id_model");
               var fontSizeLabel = document.querySelector('label[for="id_font_size"]');
               var fontSizeInput = document.getElementById("id_font_size");
-        
+              var languageSelect = document.getElementById("id_language");
+              var postProcessingLabel = document.querySelector('label[for="id_post_processing"]');
+              var postProcessingInput = document.getElementById("id_post_processing"); // Assuming it's a div or similar container
               // Initial check for the current value of the model select
               toggleFontSizeVisibility();
-        
+              togglePostProcessingVisibility();
               // Add an event listener to the model select to check for changes
               modelSelect.addEventListener("change", toggleFontSizeVisibility);
+              languageSelect.addEventListener("change", togglePostProcessingVisibility);
         
               // Function to toggle the visibility of the font size label and input
               function toggleFontSizeVisibility() {
@@ -84,6 +87,15 @@
                   fontSizeInput.style.display = "none";
                 }
               }
+              function togglePostProcessingVisibility() {
+                if (languageSelect.value === "fas") {
+                    postProcessingLabel.style.display = "block";
+                    postProcessingInput.style.display = "block";
+                } else {
+                    postProcessingLabel.style.display = "none";
+                    postProcessingInput.style.display = "none";
+                }
+                }
             });
           </script>
 </head>
@@ -95,17 +107,17 @@
     <label for="id_image">Choose an Image:</label>
     {{ form.image }}
     <br>
-    <label for="id_font_size">Font Size:</label>
-    {{ form.font_size }}
-    <br>
     <label for="id_language">Language:</label>
     {{ form.language }}
+    <br>
+    <label for="id_post_processing">Do SpellCorrection?:</label>
+    {{ form.post_processing }}
     <br>
     <label for="id_model">Moled:</label>
     {{ form.model }}
     <br>
-    <label for="id_post_processing">Do SpellCorrection?:</label>
-    {{ form.post_processing }}
+    <label for="id_font_size">Font Size:</label>
+    {{ form.font_size }}
     <br>
     <button type="submit">Convert</button>
 </form>
