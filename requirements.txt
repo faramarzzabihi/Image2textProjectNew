@@ -12,3 +12,5 @@ tesseract
 torch
 transformers
 sentence_transformers
+paddleocr
+paddlepaddle
