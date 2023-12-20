@@ -4,7 +4,8 @@ from PIL import Image
 
 def PaddleOCRT2I(img,LineSize,lng):
   if lng=='fas':lng='fa'
-  if lng=='eng':lng='en'
+  elif lng=='eng':lng='en'
+  elif lng=='ara':lng='ar'
   ocr = PaddleOCR(lang=lng)
   result = ocr.ocr(np.array(img))
 
