@@ -63,21 +63,17 @@
     </style>
     <script>
             document.addEventListener("DOMContentLoaded", function () {
-              // Get references to the model and font size elements
               var modelSelect = document.getElementById("id_model");
               var fontSizeLabel = document.querySelector('label[for="id_font_size"]');
               var fontSizeInput = document.getElementById("id_font_size");
               var languageSelect = document.getElementById("id_language");
               var postProcessingLabel = document.querySelector('label[for="id_post_processing"]');
-              var postProcessingInput = document.getElementById("id_post_processing"); // Assuming it's a div or similar container
-              // Initial check for the current value of the model select
+              var postProcessingInput = document.getElementById("id_post_processing"); 
               toggleFontSizeVisibility();
               togglePostProcessingVisibility();
-              // Add an event listener to the model select to check for changes
               modelSelect.addEventListener("change", toggleFontSizeVisibility);
               languageSelect.addEventListener("change", togglePostProcessingVisibility);
         
-              // Function to toggle the visibility of the font size label and input
               function toggleFontSizeVisibility() {
                 if (modelSelect.value === "PadellOCR") {
                   fontSizeLabel.style.display = "block";
