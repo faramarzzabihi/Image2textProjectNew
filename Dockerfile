@@ -24,5 +24,6 @@ CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 #docker build --tag python-django-ocr .
 #docker run --publish 8000:8000 python-django-ocr
 
+#docker save -o docertomove.tar python-django-ocr:latest 
 
 #python manage.py runserver

@@ -3,7 +3,6 @@ from sentence_transformers import SentenceTransformer, util
 import os
 class SimilarityChecker:
     def __init__(self):
-                # Load the Farsi transformer model
       #  self.model = SentenceTransformer("m3hrdadfi/bert-zwnj-wnli-mean-tokens")
         current_directory = os.path.dirname(os.path.abspath(__file__))
         file_path = os.path.join(current_directory, "SentenceTransformerModel.pkl")
@@ -20,6 +19,9 @@ class SimilarityChecker:
         similarity_score = util.pytorch_cos_sim(embedding1, embedding2).item()
 
         return similarity_score
+   
+   
+   
     def OpenFile(filename):
         current_directory = os.path.dirname(os.path.abspath(__file__))
         file_path = os.path.join(current_directory, filename)

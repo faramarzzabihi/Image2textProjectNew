@@ -33,7 +33,7 @@ def ConvertImage2Text(request):
                 first_half  = text[:len(text)//2]
                 second_half = text[len(text)//2:]
                 text=RunSpellCorrection.SpellCorrectiion(first_half)
-               # text+=RunSpellCorrection.SpellCorrectiion(second_half)
+                text+=RunSpellCorrection.SpellCorrectiion(second_half)
 
     else:
         form = ImageToTextForm()
