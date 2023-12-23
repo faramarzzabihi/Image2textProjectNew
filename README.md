@@ -36,18 +36,18 @@ python manage.py runserver
 ```
 Navigate to http://127.0.0.1:8000/ in your web browser to access the project interface.
 ## Usage:
-### OCR Feature:
+### 1- OCR Feature:
 
-Upload an image containing Farsi, English, or Arabic text.
-Select the appropriate language (Farsi, English, or Arabic).
-Click the 'Convert' button to extract text from the image.
-Similarity Checker:
+        - Upload an image containing Farsi, English, or Arabic text.
+        - Select the appropriate language (Farsi, English, or Arabic).
+        - Click the 'Convert' button to extract text from the image.
+1- Similarity Checker:
 
-Enter two texts in Farsi, English, or Arabic into the provided input fields.
-Click the 'Check Similarity' button to obtain a similarity score between the two texts.
-Spell Correction:
+        - Enter two texts in Farsi, English, or Arabic into the provided input fields.
+        - Click the 'Check Similarity' button to obtain a similarity score between the two texts.
+1-Spell Correction:
 
-After using the OCR feature, view the extracted text with highlighted spelling errors.
-Click the 'Correct Spelling' button to apply intelligent spell correction using the ParsBERT model.
+        - After using the OCR feature, view the extracted text with highlighted spelling errors.
+        - Click the 'Correct Spelling' button to apply intelligent spell correction using the ParsBERT model.
 ## Contribution:
 If you find any issues or have suggestions for improvements, please feel free to open an issue or create a pull request. Your contributions are highly appreciated!
