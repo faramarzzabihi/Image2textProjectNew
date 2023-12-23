@@ -14,6 +14,13 @@ This Django-based project offers a comprehensive solution for handling natural l
 
     - Enhance OCR accuracy by post-processing the extracted text to rectify spelling errors.
     - Implements the SpellCorrectionUsingParsBERT project for intelligent spell-checking of Farsi text.
+  
+## Notice:
+Please note that this project utilizes some .pkl files to optimize performance. To maintain transparency and facilitate customization:
+
+- The .pkl files are pre-computed models for specific functionalities.
+- Instead of relying on pre-existing .pkl files, consider using the corresponding classes or functionalities in the codebase to generate the desired outputs programmatically.
+
 ## Installation and Setup:
 ### Tesseract Installation:
 For Linux:\
@@ -50,3 +57,8 @@ Navigate to http://127.0.0.1:8000/ in your web browser to access the project int
     - After using the OCR feature, the 'Correct Spelling' function will apply intelligent spell correction using the ParsBERT model.
 ## Contribution:
 If you find any issues or have suggestions for improvements, please feel free to open an issue or create a pull request. Your contributions are highly appreciated!
+
+## Notice
+I use some ".pkl" files to speed up, so you should comment on them and use code to generate that class.
+
+By integrating cutting-edge NLP techniques and tools, this project aims to provide a seamless experience for users looking to perform OCR, text similarity checking, and spell correction tasks specifically for Farsi, English, and Arabic languages.
