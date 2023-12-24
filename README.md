@@ -58,7 +58,5 @@ Navigate to http://127.0.0.1:8000/ in your web browser to access the project int
 ## Contribution:
 If you find any issues or have suggestions for improvements, please feel free to open an issue or create a pull request. Your contributions are highly appreciated!
 
-## Notice
-I use some ".pkl" files to speed up, so you should comment on them and use code to generate that class.
 
 By integrating cutting-edge NLP techniques and tools, this project aims to provide a seamless experience for users looking to perform OCR, text similarity checking, and spell correction tasks specifically for Farsi, English, and Arabic languages.
