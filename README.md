@@ -23,7 +23,7 @@ Please note that this project utilizes some .pkl files to optimize performance. 
 
 ## Installation and Setup:
 ### Tesseract Installation:
-For Linux:\
+For Linux:
 ```
 sudo apt-get install tesseract-ocr
 sudo apt-get install tesseract-ocr-fas
@@ -58,9 +58,9 @@ Navigate to http://127.0.0.1:8000/ in your web browser to access the project int
     - Click the 'Check Similarity' button to obtain a similarity score between the two texts.
 1. Spell Correction:
 
-    - If your selactde language is Farsi and you are selected 'Spell Correction', after using the OCR feature, the 'Correct Spelling' function will apply intelligent spell correction using the ParsBERT model.
+    - If your selected language is Farsi and you are selected 'Spell Correction', after using the OCR feature, the 'Correct Spelling' function will apply intelligent spell correction using the ParsBERT model.
 ## Contribution:
 If you find any issues or have suggestions for improvements, please feel free to open an issue or create a pull request. Your contributions are highly appreciated!
 
 
-By integrating cutting-edge NLP techniques and tools, this project aims to provide a seamless experience for users looking to perform OCR, text similarity checking, and spell correction tasks specifically for Farsi, English, and Arabic languages.
+## By integrating cutting-edge NLP techniques and tools, this project aims to provide a seamless experience for users looking to perform OCR, text similarity checking, and spell correction tasks specifically for Farsi, English, and Arabic languages.
