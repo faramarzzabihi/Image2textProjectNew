@@ -54,7 +54,7 @@ Navigate to http://127.0.0.1:8000/ in your web browser to access the project int
     - Click the 'Check Similarity' button to obtain a similarity score between the two texts.
 1. Spell Correction:
 
-    - After using the OCR feature, the 'Correct Spelling' function will apply intelligent spell correction using the ParsBERT model.
+    - If your selactde language is Farsi and you are selected 'Spell Correction', after using the OCR feature, the 'Correct Spelling' function will apply intelligent spell correction using the ParsBERT model.
 ## Contribution:
 If you find any issues or have suggestions for improvements, please feel free to open an issue or create a pull request. Your contributions are highly appreciated!
 
