@@ -1,6 +1,6 @@
 # Simple OCR, Spell Correction, and Similarity Checker for Farsi Text
 This Django-based project offers a comprehensive solution for handling natural language processing (NLP) tasks specifically tailored for Farsi, English, and Arabic texts. By integrating various tools and libraries, users can convert images to text, assess text similarity, and perform spell correction effortlessly.
-![image](https://github.com/faramarzzabihi/Image2textProjectNew/assets/8306299/7e13d5db-38aa-48b1-aa7b-bc4ca3873584)
+![image](https://github.com/faramarzzabihi/Image2textProjectNew/assets/8306299/7e13d5db-38aa-48b1-aa7b-bc4ca3873584) ![image](https://github.com/faramarzzabihi/Image2textProjectNew/assets/8306299/7f379894-417b-4b1a-b9cd-e53d7b4394a1)
 
 
 ## Features:
