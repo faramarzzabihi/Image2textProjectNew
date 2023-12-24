@@ -60,6 +60,4 @@ If you find any issues or have suggestions for improvements, please feel free to
 
 
 
-
-
 By integrating cutting-edge NLP techniques and tools, this project aims to provide a seamless experience for users looking to perform OCR, text similarity checking, and spell correction tasks specifically for Farsi, English, and Arabic languages.
