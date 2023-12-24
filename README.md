@@ -24,7 +24,8 @@ Please note that this project utilizes some .pkl files to optimize performance. 
 ## Installation and Setup:
 ### Tesseract Installation:
 For Linux:\
-```sudo apt-get install tesseract-ocr
+```
+sudo apt-get install tesseract-ocr
 sudo apt-get install tesseract-ocr-fas
 sudo apt-get install tesseract-ocr-ara
 ```
