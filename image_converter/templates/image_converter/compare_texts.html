@@ -80,10 +80,10 @@
 <form method="post" name="textComparisonForm" onsubmit="return validateForm()">
     {% csrf_token %}
     <label for="text1">Text 1:</label>
-    <textarea name="text1" id="text1" rows="4" cols="50" required></textarea>
+    <textarea name="text1" id="text1" rows="15" cols="50" required></textarea>
     <br>
     <label for="text2">Text 2:</label>
-    <textarea name="text2" id="text2" rows="4" cols="50" required></textarea>
+    <textarea name="text2" id="text2" rows="15" cols="50" required></textarea>
     <br>
     <input type="submit" value="Compare">
 </form>
