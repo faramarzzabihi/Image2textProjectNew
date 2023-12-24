@@ -119,13 +119,22 @@
 </form>
 
 {% if converted_image %}
-    <h3>Converted Text:</h3>
-    <p>{{ converted_image }}</p>
-    <p>------------------------------------------</p>
-    <p>Font Size: {{ font_size }}px</p>
-    <p>Language: {{ language }}</p>
-    <p>Model: {{ model }}</p>
-    <p>Post Processing: {{ post_processing }}</p>
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-top: 40px;">
+        <div style="flex: 1;">
+            <h3>Uploaded Image:</h3>
+            <img src="{{ image_url }}" alt="Uploaded Image" style="max-width: 100%; height: auto;">
+        </div>
+       
+        <div style="flex: 1; margin-left: 40px;">
+            <h3>Converted Text:</h3>
+            <p>{{ converted_image }}</p>
+            <p>------------------------------------------</p>
+            <p>Font Size: {{ font_size }}px</p>
+            <p>Language: {{ language }}</p>
+            <p>Model: {{ model }}</p>
+            <p>Post Processing: {{ post_processing }}</p>
+        </div>
+    </div>
 {% endif %}
 
 </body>

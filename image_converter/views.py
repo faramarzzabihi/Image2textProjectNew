@@ -1,6 +1,8 @@
 
 from django.shortcuts import render
 from django.http import JsonResponse
+from django.conf import settings
+import os
 import pytesseract
 from PIL import Image
 from .forms import ImageToTextForm
@@ -10,6 +12,7 @@ from .Utils.PadellOCR import PaddleOCRT2I
 #import OcrSourceCode
 def ConvertImage2Text(request):
     text = None
+    img_url= '/media/01.jpg'
     font_size = 12
     language = 'fas'
     post_processing = 'no'
@@ -24,6 +27,14 @@ def ConvertImage2Text(request):
             post_processing = form.cleaned_data['post_processing']
             model = form.cleaned_data['model']
             img = Image.open(image)
+
+            uploaded_image = request.FILES['image']
+            image_path = os.path.join(settings.MEDIA_ROOT, uploaded_image.name)
+            with open(image_path, 'wb+') as destination:
+                for chunk in uploaded_image.chunks():
+                    destination.write(chunk)
+            img_url = os.path.join(settings.MEDIA_URL, uploaded_image.name)
+            
             if model=="Tesseract" :
                 text = pytesseract.image_to_string(img, lang=language)
             else:
@@ -38,7 +49,7 @@ def ConvertImage2Text(request):
     else:
         form = ImageToTextForm()
 
-    return render(request, 'image_converter/convert.html', {'form': form, 'converted_image': text, 'font_size': font_size, 'language': language,'model':model, 'post_processing': post_processing})
+    return render(request, 'image_converter/convert.html', {'form': form,'image_url':img_url, 'converted_image': text, 'font_size': font_size, 'language': language,'model':model, 'post_processing': post_processing})
 
 def CompareTexts(request):
 
